@@ -4,8 +4,6 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import TextLoader
 from langchain.text_splitter import TokenTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
-import time
-
 
 loader = TextLoader("DIY History Textbook.txt", encoding = "utf-8")
 docs = loader.load()
@@ -63,5 +61,6 @@ while True:
     result = chain.invoke({"context": context, "question": query})
     print(result)
     print("\n\n")
+
 
 
